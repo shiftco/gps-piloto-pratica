@@ -1,7 +1,7 @@
 import { TopicItem, FaqItem } from '../types';
 
 export const HERO_DATA = {
-  headline: "GPS e piloto automático na prática",
+  headline: "Domine GPS e piloto automático",
   subheadline: "Aprenda todas as configurações de GPS e piloto automático que todo operador precisa dominar para configurar, calibrar e operar máquinas agrícolas com precisão",
   badgeText: "Treinamento 100% online",
   heroImageUrl: "/images/hero-gps-monitor.svg",
