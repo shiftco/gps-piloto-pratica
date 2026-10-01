@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, ShieldCheck, QrCode, CheckCircle2, Check } from 'lucide-react';
+import { ImageDropSlot } from './ImageDropSlot';
 
 interface InprotecCertificateMockupProps {
   studentName?: string;
@@ -11,17 +12,26 @@ export const InprotecCertificateMockup: React.FC<InprotecCertificateMockupProps>
   const displayName = studentName.trim() ? studentName.toUpperCase() : 'SEU NOME COMPLETO';
 
   return (
-    <div className="relative w-full max-w-5xl mx-auto my-8 select-none">
-      {/* Background Soft Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+    <ImageDropSlot
+      slot="certificate"
+      alt="Certificado Oficial Inprotec e Carteirinha do Operador"
+      defaultSrc="/images/inprotec-certificado-tablet.png"
+      aspectClass="aspect-auto"
+      bgClass="bg-transparent"
+      buttonLabel="Trocar Imagem do Certificado"
+      className="w-full max-w-5xl mx-auto my-6 sm:my-8 bg-transparent"
+    >
+      <div className="relative w-full max-w-5xl mx-auto select-none overflow-hidden">
+        {/* Background Soft Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 
-      {/* Main Composite Container */}
-      <div className="relative flex flex-col items-center">
+        {/* Main Composite Container */}
+        <div className="relative flex flex-col items-center">
 
-        {/* ======================================================== */}
-        {/* 1. TABLET MOCKUP IN THE BACKGROUND                     */}
-        {/* ======================================================== */}
-        <div className="w-full max-w-4xl bg-[#111827] rounded-[28px] sm:rounded-[36px] p-2.5 sm:p-4 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.35),0_0_30px_rgba(16,185,129,0.12)] border border-slate-700/60 relative">
+          {/* ======================================================== */}
+          {/* 1. TABLET MOCKUP IN THE BACKGROUND                     */}
+          {/* ======================================================== */}
+          <div className="w-full max-w-4xl bg-[#111827] rounded-[22px] sm:rounded-[36px] p-2 sm:p-4 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.35),0_0_30px_rgba(16,185,129,0.12)] border border-slate-700/60 relative">
           
           {/* Tablet Front Camera Pinhole */}
           <div className="absolute top-2.5 left-1/2 -translate-x-1/2 flex items-center justify-center">
@@ -154,9 +164,9 @@ export const InprotecCertificateMockup: React.FC<InprotecCertificateMockupProps>
 
         {/* ======================================================== */}
         {/* 2. FOREGROUND CARTEIRINHA DO OPERADOR                    */}
-        {/* Tilted at realistic angle overlapping the tablet bottom  */}
+        {/* Posicionamento adaptativo: limpo no mobile e sobreposto no desktop */}
         {/* ======================================================== */}
-        <div className="w-full max-w-2xl -mt-16 sm:-mt-24 md:-mt-28 z-20 px-2 sm:px-4 transform sm:-rotate-2 hover:rotate-0 transition-transform duration-300">
+        <div className="w-full max-w-2xl mt-4 sm:-mt-20 md:-mt-24 z-20 px-1 sm:px-4 transform sm:-rotate-1 hover:rotate-0 transition-transform duration-300">
           <div className="bg-white rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4),0_0_20px_rgba(16,185,129,0.15)] border-2 border-emerald-600/60 overflow-hidden text-slate-900">
             
             {/* Carteirinha Grid: Left Panel (ID) + Right Panel (NRs & Syllabus) */}
@@ -287,6 +297,7 @@ export const InprotecCertificateMockup: React.FC<InprotecCertificateMockupProps>
         </div>
 
       </div>
-    </div>
+      </div>
+    </ImageDropSlot>
   );
 };

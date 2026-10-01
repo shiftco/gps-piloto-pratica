@@ -39,15 +39,6 @@ export const TopicsSection: React.FC<TopicsSectionProps> = ({ onOpenCheckout }) 
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             O que você vai aprender na prática
           </h2>
-
-          <div className="space-y-2 text-base sm:text-lg text-slate-700 font-normal leading-relaxed">
-            <p className="text-emerald-700 font-semibold font-tech">
-              Aqui não tem aula cheia de teoria que você nunca usa.
-            </p>
-            <p>
-              Você vai aprender as configurações que fazem parte da rotina de quem realmente opera máquinas com GPS e piloto automático no campo.
-            </p>
-          </div>
         </div>
 
         {/* 6 Topics Grid */}

@@ -1,6 +1,5 @@
 import React from 'react';
 import { ShieldCheck, Lock } from 'lucide-react';
-import { DescomplicandoGpsLogo } from './DescomplicandoGpsLogo';
 
 interface FooterProps {
   onOpenCheckout: () => void;
@@ -16,9 +15,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCheckout }) => {
           
           {/* Brand Col */}
           <div className="space-y-3 md:col-span-2">
-            <div className="flex items-center gap-2">
-              <DescomplicandoGpsLogo className="h-10 w-auto" />
-            </div>
             <p className="text-slate-600 text-xs font-sans max-w-md leading-relaxed">
               Formação prática em agricultura de precisão e tecnologia embarcada para operadores de máquinas agrícolas em todo o Brasil. Inprotec Treinamentos.
             </p>

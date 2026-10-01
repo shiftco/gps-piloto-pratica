@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
 import { TopicsSection } from './components/TopicsSection';
-import { SimulatorBonusSection } from './components/SimulatorBonusSection';
 import { OperatorCertificationSection } from './components/OperatorCertificationSection';
 import { InstructorSection } from './components/InstructorSection';
 import { PricingOfferSection } from './components/PricingOfferSection';
@@ -52,12 +50,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-emerald-600 selection:text-white">
-      
-      {/* Sticky Top Header */}
-      <Header
-        onOpenCheckout={handleScrollToOffer}
-      />
+    <div className="min-h-screen bg-black text-slate-100 font-sans selection:bg-emerald-600 selection:text-white">
 
       {/* Main Page Sections */}
       <main>
@@ -66,10 +59,6 @@ export default function App() {
         />
 
         <TopicsSection
-          onOpenCheckout={handleScrollToOffer}
-        />
-
-        <SimulatorBonusSection
           onOpenCheckout={handleScrollToOffer}
         />
 
@@ -101,12 +90,12 @@ export default function App() {
       />
 
       {/* Floating Bottom Sticky Bar on Mobile */}
-      <div className="fixed bottom-0 left-0 right-0 z-30 p-3 bg-white/95 backdrop-blur-md border-t border-slate-200 lg:hidden shadow-2xl flex items-center justify-between gap-2">
+      <div className="fixed bottom-0 left-0 right-0 z-30 p-3 bg-zinc-950/95 backdrop-blur-md border-t border-zinc-800 lg:hidden shadow-2xl flex items-center justify-between gap-2">
         <div className="flex flex-col">
-          <span className="text-[10px] text-slate-500 font-mono">Lote de Hoje:</span>
+          <span className="text-[10px] text-zinc-400 font-mono">Lote de Hoje:</span>
           <div className="flex items-center gap-1">
-            <span className="text-xs text-slate-400 line-through font-mono">R$ 297</span>
-            <span className="font-tech text-lg font-bold text-emerald-700">R$ 97</span>
+            <span className="text-xs text-zinc-500 line-through font-mono">R$ 297</span>
+            <span className="font-tech text-lg font-bold text-emerald-400">R$ 97</span>
           </div>
         </div>
         <button
