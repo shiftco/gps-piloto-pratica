@@ -2,9 +2,9 @@ import { TopicItem, FaqItem } from '../types';
 
 export const HERO_DATA = {
   headline: "GPS e piloto automático na prática",
-  subheadline: "Aprenda mais de 50 configurações de GPS e piloto automático que todo operador precisa dominar para configurar, calibrar e operar máquinas agrícolas com precisão.",
+  subheadline: "Aprenda todas as configurações de GPS e piloto automático que todo operador precisa dominar para configurar, calibrar e operar máquinas agrícolas com precisão",
   badgeText: "Treinamento 100% online",
-  heroImageUrl: "/images/hero-gps-monitor.jpg",
+  heroImageUrl: "/images/hero-gps-monitor.svg",
   metrics: [
     { label: "Operadores Formados", value: "+17.000" },
     { label: "Configurações Práticas", value: "+50" },

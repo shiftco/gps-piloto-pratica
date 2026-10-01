@@ -1,5 +1,6 @@
 import React from 'react';
-import { ShieldCheck, Lock, Cpu } from 'lucide-react';
+import { ShieldCheck, Lock } from 'lucide-react';
+import { DescomplicandoGpsLogo } from './DescomplicandoGpsLogo';
 
 interface FooterProps {
   onOpenCheckout: () => void;
@@ -16,12 +17,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCheckout }) => {
           {/* Brand Col */}
           <div className="space-y-3 md:col-span-2">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-emerald-600 border border-emerald-700 flex items-center justify-center text-white">
-                <Cpu className="w-4 h-4" />
-              </div>
-              <span className="font-tech text-base font-bold text-slate-900 tracking-wide">
-                GPS & PILOTO AUTOMÁTICO NA PRÁTICA
-              </span>
+              <DescomplicandoGpsLogo className="h-10 w-auto" />
             </div>
             <p className="text-slate-600 text-xs font-sans max-w-md leading-relaxed">
               Formação prática em agricultura de precisão e tecnologia embarcada para operadores de máquinas agrícolas em todo o Brasil. Inprotec Treinamentos.

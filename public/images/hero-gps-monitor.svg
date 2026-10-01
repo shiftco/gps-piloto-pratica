@@ -1,0 +1,418 @@
+<svg viewBox="0 0 1200 648" fill="none" xmlns="http://www.w3.org/2000/svg" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Field Soil Texture / Pattern -->
+    <pattern id="soilLines" width="60" height="20" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="5" x2="60" y2="5" stroke="#362519" stroke-width="1.2" opacity="0.6" />
+      <line x1="0" y1="15" x2="60" y2="15" stroke="#312014" stroke-width="1" opacity="0.5" />
+    </pattern>
+
+    <!-- Swath / Worked Area Pattern -->
+    <linearGradient id="swathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#15803d" stop-opacity="0.85" />
+      <stop offset="5%" stop-color="#22c55e" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#16a34a" stop-opacity="0.95" />
+      <stop offset="95%" stop-color="#22c55e" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#15803d" stop-opacity="0.85" />
+    </linearGradient>
+
+    <!-- Tractor Colors -->
+    <linearGradient id="jdGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ba635" />
+      <stop offset="50%" stop-color="#2f781f" />
+      <stop offset="100%" stop-color="#1f5813" />
+    </linearGradient>
+
+    <linearGradient id="jdYellow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffe600" />
+      <stop offset="100%" stop-color="#d4aa00" />
+    </linearGradient>
+  </defs>
+
+  <!-- ================= BACKGROUND BASE ================= -->
+  <rect width="1200" height="648" fill="#0d1410" />
+
+  <!-- ================= TOP HEADER (Height 40px) ================= -->
+  <g id="top-bar">
+    <rect x="0" y="0" width="1200" height="40" fill="#141c16" stroke="#232e26" stroke-width="1" />
+    
+    <!-- Menu Button (Left) -->
+    <rect x="0" y="0" width="270" height="40" fill="#18231a" stroke="#2d3b2f" stroke-width="1" />
+    <text x="12" y="25" fill="#ffffff" font-size="14" font-weight="700">Menu</text>
+    <path d="M 252 16 L 257 21 L 252 26" stroke="#8da392" stroke-width="2" fill="none" stroke-linecap="round" />
+    <rect x="246" y="14" width="14" height="14" rx="2" fill="none" stroke="#607565" stroke-width="1.2" />
+
+    <!-- Lateral Error Indicator (Center) -->
+    <text x="286" y="24" fill="#cbd5e1" font-size="13" font-weight="600">Erro lateral</text>
+    <!-- Arrow Left / Target / Arrow Right -->
+    <g transform="translate(695, 10)">
+      <rect x="0" y="0" width="70" height="22" rx="3" fill="#202c23" stroke="#35483a" stroke-width="1" />
+      <text x="8" y="15" fill="#a4b8a9" font-size="11" font-weight="bold">«</text>
+      <circle cx="35" cy="11" r="3.5" fill="none" stroke="#a4b8a9" stroke-width="1.5" />
+      <circle cx="35" cy="11" r="1" fill="#a4b8a9" />
+      <text x="56" y="15" fill="#a4b8a9" font-size="11" font-weight="bold">»</text>
+    </g>
+
+    <!-- Deviation Lightbar -->
+    <g transform="translate(370, 16)">
+      <!-- Lightbar segments background -->
+      <rect x="0" y="0" width="310" height="10" rx="2" fill="#1c261e" stroke="#2d3b2f" stroke-width="1" />
+      <!-- Center Zero Point -->
+      <rect x="145" y="-2" width="20" height="14" rx="2" fill="#e2e8f0" />
+      <line x1="155" y1="-3" x2="155" y2="13" stroke="#0f172a" stroke-width="1.5" />
+    </g>
+    <text x="352" y="36" fill="#8da392" font-size="10" font-mono font-weight="bold">━,━━ m</text>
+
+    <!-- Heading Error (Right) -->
+    <text x="1090" y="24" fill="#cbd5e1" font-size="13" font-weight="600">Erro de rumo ━</text>
+  </g>
+
+  <!-- ================= LEFT SIDEBAR (Width 270px) ================= -->
+  <g id="left-sidebar" transform="translate(0, 40)">
+    <!-- Sidebar Base Background -->
+    <rect x="0" y="0" width="270" height="608" fill="#e6e9e7" stroke="#c8cec9" stroke-width="1" />
+
+    <!-- Top 6 Navigation Buttons Matrix -->
+    <g transform="translate(8, 8)">
+      <!-- Mapa -->
+      <rect x="0" y="0" width="82" height="44" rx="3" fill="#f8faf9" stroke="#b8c0ba" stroke-width="1" />
+      <path d="M 33 16 L 39 13 L 45 16 L 51 13 L 51 29 L 45 32 L 39 29 L 33 32 Z" fill="none" stroke="#2d3748" stroke-width="1.4" />
+      <text x="41" y="38" text-anchor="middle" fill="#1a202c" font-size="11" font-weight="600">Mapa</text>
+
+      <!-- Talhões -->
+      <rect x="87" y="0" width="82" height="44" rx="3" fill="#f8faf9" stroke="#b8c0ba" stroke-width="1" />
+      <path d="M 124 16 L 132 14 L 136 24 L 126 27 Z" fill="none" stroke="#2d3748" stroke-width="1.4" />
+      <text x="128" y="38" text-anchor="middle" fill="#1a202c" font-size="11" font-weight="600">Talhões</text>
+
+      <!-- Guiamento (ACTIVE GREEN) -->
+      <rect x="174" y="0" width="82" height="44" rx="3" fill="#1b7a2d" stroke="#135e21" stroke-width="1" />
+      <path d="M 210 18 L 220 22 L 210 26 L 213 22 Z" fill="#ffffff" stroke="#ffffff" stroke-width="1.2" />
+      <text x="215" y="38" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700">Guiamento</text>
+
+      <!-- Row 2 -->
+      <!-- Máquina -->
+      <rect x="0" y="48" width="82" height="44" rx="3" fill="#f8faf9" stroke="#b8c0ba" stroke-width="1" />
+      <circle cx="34" cy="72" r="5" fill="none" stroke="#2d3748" stroke-width="1.4" />
+      <circle cx="48" cy="72" r="5" fill="none" stroke="#2d3748" stroke-width="1.4" />
+      <path d="M 33 67 L 42 67 L 45 61 L 49 61 L 49 67" fill="none" stroke="#2d3748" stroke-width="1.4" />
+      <text x="41" y="86" text-anchor="middle" fill="#1a202c" font-size="11" font-weight="600">Máquina</text>
+
+      <!-- Implemento -->
+      <rect x="87" y="48" width="82" height="44" rx="3" fill="#f8faf9" stroke="#b8c0ba" stroke-width="1" />
+      <path d="M 120 62 L 136 76" stroke="#2d3748" stroke-width="2" stroke-linecap="round" />
+      <line x1="123" y1="63" x2="125" y2="67" stroke="#2d3748" stroke-width="1.2" />
+      <line x1="128" y1="68" x2="130" y2="72" stroke="#2d3748" stroke-width="1.2" />
+      <text x="128" y="86" text-anchor="middle" fill="#1a202c" font-size="11" font-weight="600">Implemento</text>
+
+      <!-- GNSS -->
+      <rect x="174" y="48" width="82" height="44" rx="3" fill="#f8faf9" stroke="#b8c0ba" stroke-width="1" />
+      <circle cx="215" cy="66" r="3" fill="#2d3748" />
+      <path d="M 207 63 A 10 10 0 0 1 207 72" fill="none" stroke="#2d3748" stroke-width="1.3" />
+      <path d="M 223 63 A 10 10 0 0 0 223 72" fill="none" stroke="#2d3748" stroke-width="1.3" />
+      <text x="215" y="86" text-anchor="middle" fill="#1a202c" font-size="11" font-weight="600">GNSS</text>
+
+      <!-- Row 3 -->
+      <!-- Trabalho -->
+      <rect x="0" y="96" width="82" height="44" rx="3" fill="#f8faf9" stroke="#b8c0ba" stroke-width="1" />
+      <rect x="34" y="104" width="14" height="18" rx="2" fill="none" stroke="#2d3748" stroke-width="1.4" />
+      <line x1="38" y1="110" x2="44" y2="110" stroke="#2d3748" stroke-width="1.2" />
+      <line x1="38" y1="114" x2="44" y2="114" stroke="#2d3748" stroke-width="1.2" />
+      <text x="41" y="134" text-anchor="middle" fill="#1a202c" font-size="11" font-weight="600">Trabalho</text>
+    </g>
+
+    <!-- SECTION: Tipo de linha -->
+    <g transform="translate(12, 160)">
+      <text x="0" y="0" fill="#2d3748" font-size="12" font-weight="700">Tipo de linha</text>
+
+      <!-- 2x2 Line Type Grid -->
+      <g transform="translate(0, 10)">
+        <!-- AB reta (ACTIVE GREEN) -->
+        <rect x="0" y="0" width="118" height="50" rx="6" fill="#1b7a2d" stroke="#135e21" stroke-width="1" />
+        <g stroke="#ffffff" stroke-width="2" stroke-linecap="round">
+          <line x1="50" y1="14" x2="50" y2="24" />
+          <line x1="59" y1="12" x2="59" y2="26" />
+          <line x1="68" y1="14" x2="68" y2="24" />
+        </g>
+        <text x="59" y="38" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">AB reta</text>
+
+        <!-- AB curva -->
+        <rect x="126" y="0" width="118" height="50" rx="6" fill="#f4f6f5" stroke="#b8c0ba" stroke-width="1" />
+        <path d="M 178 14 Q 185 19 180 25" stroke="#4a5568" stroke-width="2" fill="none" stroke-linecap="round" />
+        <path d="M 186 14 Q 193 19 188 25" stroke="#4a5568" stroke-width="2" fill="none" stroke-linecap="round" />
+        <text x="185" y="38" text-anchor="middle" fill="#2d3748" font-size="12" font-weight="600">AB curva</text>
+
+        <!-- Contorno -->
+        <rect x="0" y="56" width="118" height="50" rx="6" fill="#f4f6f5" stroke="#b8c0ba" stroke-width="1" />
+        <path d="M 50 82 C 50 68 68 68 68 82" stroke="#4a5568" stroke-width="2" fill="none" stroke-linecap="round" />
+        <text x="59" y="94" text-anchor="middle" fill="#2d3748" font-size="12" font-weight="600">Contorno</text>
+
+        <!-- Círculo -->
+        <rect x="126" y="56" width="118" height="50" rx="6" fill="#f4f6f5" stroke="#b8c0ba" stroke-width="1" />
+        <circle cx="185" cy="74" r="7" fill="none" stroke="#4a5568" stroke-width="1.8" />
+        <circle cx="185" cy="74" r="2.5" fill="#4a5568" />
+        <text x="185" y="94" text-anchor="middle" fill="#2d3748" font-size="12" font-weight="600">Círculo</text>
+      </g>
+
+      <!-- Action Buttons: Marcar A & Marcar B -->
+      <g transform="translate(0, 126)">
+        <rect x="0" y="0" width="118" height="30" rx="4" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1" />
+        <text x="59" y="20" text-anchor="middle" fill="#475569" font-size="12" font-weight="700">Marcar A</text>
+
+        <rect x="126" y="0" width="118" height="30" rx="4" fill="#0d6e27" stroke="#09521c" stroke-width="1" />
+        <text x="185" y="20" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">Marcar B</text>
+      </g>
+
+      <!-- Nenhuma linha criada + 3 buttons -->
+      <g transform="translate(0, 168)">
+        <text x="0" y="10" fill="#2d3748" font-size="12" font-weight="600">Nenhuma linha criada</text>
+        <g transform="translate(0, 18)">
+          <rect x="0" y="0" width="76" height="26" rx="4" fill="#e2e8f0" />
+          <text x="38" y="17" text-anchor="middle" fill="#64748b" font-size="11" font-weight="600">-5 cm</text>
+
+          <rect x="84" y="0" width="76" height="26" rx="4" fill="#e2e8f0" />
+          <text x="122" y="17" text-anchor="middle" fill="#64748b" font-size="11" font-weight="600">+5 cm</text>
+
+          <rect x="168" y="0" width="76" height="26" rx="4" fill="#e2e8f0" />
+          <text x="206" y="17" text-anchor="middle" fill="#64748b" font-size="11" font-weight="600">Apagar</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- SECTION: Piloto Automático -->
+    <g transform="translate(12, 388)">
+      <text x="0" y="0" fill="#2d3748" font-size="12" font-weight="700">Piloto automático</text>
+
+      <!-- BIG YELLOW BUTTON: Engatar piloto -->
+      <g transform="translate(0, 10)">
+        <rect x="0" y="0" width="244" height="42" rx="6" fill="#e5ac00" stroke="#c49200" stroke-width="1.5" />
+        <!-- Steering Wheel Icon -->
+        <g transform="translate(62, 21)">
+          <circle cx="0" cy="0" r="10" fill="none" stroke="#1f2937" stroke-width="2" />
+          <circle cx="0" cy="0" r="3" fill="#1f2937" />
+          <line x1="-10" y1="0" x2="-3" y2="0" stroke="#1f2937" stroke-width="2" />
+          <line x1="3" y1="0" x2="10" y2="0" stroke="#1f2937" stroke-width="2" />
+          <line x1="0" y1="3" x2="0" y2="10" stroke="#1f2937" stroke-width="2" />
+        </g>
+        <text x="82" y="26" fill="#111827" font-size="14" font-weight="800">Engatar piloto</text>
+      </g>
+
+      <!-- Sensibilidade 55 -->
+      <g transform="translate(0, 68)">
+        <text x="0" y="0" fill="#2d3748" font-size="12" font-weight="600">Sensibilidade</text>
+        <text x="244" y="0" text-anchor="end" fill="#111827" font-size="14" font-weight="800">55</text>
+
+        <!-- Slider Bar -->
+        <rect x="0" y="10" width="244" height="4" rx="2" fill="#cbd5e1" />
+        <rect x="0" y="10" width="134" height="4" rx="2" fill="#22c55e" />
+        <circle cx="134" cy="12" r="7" fill="#15803d" stroke="#ffffff" stroke-width="2" />
+
+        <text x="0" y="28" fill="#4b5563" font-size="9.5" font-weight="500">
+          Valores altos corrigem mais rápido, mas provocam
+        </text>
+        <text x="0" y="40" fill="#4b5563" font-size="9.5" font-weight="500">
+          oscilação sobre a linha.
+        </text>
+      </g>
+
+      <!-- Green Bottom Button: Levantar implemento -->
+      <g transform="translate(0, 126)">
+        <rect x="0" y="0" width="244" height="34" rx="6" fill="#0d6e27" stroke="#09521c" stroke-width="1" />
+        <text x="122" y="22" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700">Levantar implemento</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= CENTER & RIGHT: FIELD CANVAS ================= -->
+  <g id="field-area" transform="translate(270, 40)">
+    <!-- Soil Background -->
+    <rect x="0" y="0" width="930" height="538" fill="#423023" />
+    <rect x="0" y="0" width="930" height="538" fill="url(#soilLines)" />
+
+    <!-- Worked Swath (Rastro Verde de Plantio/Cobertura) -->
+    <rect x="382" y="280" width="68" height="258" fill="url(#swathGrad)" opacity="0.9" />
+    <line x1="382" y1="280" x2="382" y2="538" stroke="#15803d" stroke-width="1.5" />
+    <line x1="450" y1="280" x2="450" y2="538" stroke="#15803d" stroke-width="1.5" />
+
+    <!-- Thin guidance track in center -->
+    <line x1="416" y1="280" x2="416" y2="538" stroke="#15803d" stroke-width="1" stroke-dasharray="8,6" opacity="0.6" />
+
+    <!-- Guidance Centerline (Yellow line ahead of tractor) -->
+    <line x1="416" y1="180" x2="416" y2="216" stroke="#eab308" stroke-width="2.5" stroke-linecap="round" />
+
+    <!-- ================= TRACTOR & IMPLEMENT GRAPHIC ================= -->
+    <g transform="translate(416, 250)">
+      
+      <!-- IMPLEMENT (Planter / Seeder behind tractor) -->
+      <g transform="translate(0, 16)">
+        <!-- Implement hitch bar -->
+        <rect x="-3" y="-14" width="6" height="14" fill="#374151" />
+        
+        <!-- Implement main toolbar width (68px) -->
+        <rect x="-34" y="0" width="68" height="6" rx="1.5" fill="#15803d" stroke="#14532d" stroke-width="1" />
+        
+        <!-- Fertilizer / Seed hoppers (yellow boxes) -->
+        <rect x="-28" y="-6" width="18" height="7" rx="1" fill="#eab308" stroke="#ca8a04" stroke-width="0.8" />
+        <rect x="-7" y="-6" width="14" height="7" rx="1" fill="#eab308" stroke="#ca8a04" stroke-width="0.8" />
+        <rect x="10" y="-6" width="18" height="7" rx="1" fill="#eab308" stroke="#ca8a04" stroke-width="0.8" />
+
+        <!-- Row units / coulters (13 row units) -->
+        <g stroke="#1f2937" stroke-width="1.5">
+          <line x1="-32" y1="6" x2="-32" y2="12" />
+          <line x1="-27" y1="6" x2="-27" y2="12" />
+          <line x1="-22" y1="6" x2="-22" y2="12" />
+          <line x1="-16" y1="6" x2="-16" y2="12" />
+          <line x1="-11" y1="6" x2="-11" y2="12" />
+          <line x1="-5" y1="6" x2="-5" y2="12" />
+          <line x1="0" y1="6" x2="0" y2="12" />
+          <line x1="5" y1="6" x2="5" y2="12" />
+          <line x1="11" y1="6" x2="11" y2="12" />
+          <line x1="16" y1="6" x2="16" y2="12" />
+          <line x1="22" y1="6" x2="22" y2="12" />
+          <line x1="27" y1="6" x2="27" y2="12" />
+          <line x1="32" y1="6" x2="32" y2="12" />
+        </g>
+      </g>
+
+      <!-- TRACTOR (John Deere Style Green Tractor) -->
+      <g transform="translate(0, -14)">
+        <!-- Rear Tires (Duals / Wide) -->
+        <rect x="-14" y="-2" width="6" height="18" rx="2" fill="#18181b" />
+        <rect x="8" y="-2" width="6" height="18" rx="2" fill="#18181b" />
+        <!-- Front Tires -->
+        <rect x="-12" y="-22" width="5" height="12" rx="2" fill="#18181b" />
+        <rect x="7" y="-22" width="5" height="12" rx="2" fill="#18181b" />
+
+        <!-- Tractor Main Body Chassis (Green) -->
+        <rect x="-8" y="-24" width="16" height="26" rx="3" fill="url(#jdGreen)" stroke="#14532d" stroke-width="1" />
+        
+        <!-- Hood front taper -->
+        <path d="M -7 -14 L -5 -24 L 5 -24 L 7 -14 Z" fill="#22c55e" opacity="0.3" />
+        <rect x="-3" y="-24" width="6" height="3" fill="#ffe600" />
+
+        <!-- Tractor Cab (Glass) -->
+        <rect x="-7" y="-12" width="14" height="12" rx="2" fill="#93c5fd" opacity="0.8" stroke="#1e293b" stroke-width="1" />
+        <!-- Cab Roof (Yellow/Green) -->
+        <rect x="-8" y="-11" width="16" height="10" rx="3" fill="url(#jdGreen)" />
+        
+        <!-- StarFire GPS Receiver Dome on Cab Roof -->
+        <circle cx="0" cy="-6" r="3.2" fill="#ffe600" stroke="#ca8a04" stroke-width="0.8" />
+        <circle cx="0" cy="-6" r="1.2" fill="#ffffff" />
+      </g>
+
+    </g>
+
+    <!-- Floating Zoom Controls (Left of field) -->
+    <g transform="translate(10, 10)">
+      <rect x="0" y="0" width="28" height="28" rx="3" fill="#f8faf9" stroke="#b8c0ba" stroke-width="1" />
+      <text x="14" y="19" text-anchor="middle" fill="#2d3748" font-size="18" font-weight="bold">+</text>
+
+      <rect x="0" y="32" width="28" height="28" rx="3" fill="#f8faf9" stroke="#b8c0ba" stroke-width="1" />
+      <text x="14" y="50" text-anchor="middle" fill="#2d3748" font-size="18" font-weight="bold">−</text>
+
+      <rect x="0" y="64" width="28" height="28" rx="3" fill="#f8faf9" stroke="#b8c0ba" stroke-width="1" />
+      <!-- 3D Perspective Eye Icon -->
+      <circle cx="14" cy="78" r="6" fill="none" stroke="#2d3748" stroke-width="1.5" />
+      <circle cx="14" cy="78" r="2.5" fill="#2d3748" />
+
+      <rect x="0" y="96" width="28" height="28" rx="3" fill="#f8faf9" stroke="#b8c0ba" stroke-width="1" />
+      <text x="14" y="115" text-anchor="middle" fill="#2d3748" font-size="12" font-weight="bold">N↑</text>
+
+      <rect x="0" y="128" width="28" height="28" rx="3" fill="#f8faf9" stroke="#b8c0ba" stroke-width="1" />
+      <!-- Center Vehicle Icon -->
+      <path d="M 14 135 L 18 145 L 14 142 L 10 145 Z" fill="#2d3748" />
+    </g>
+
+    <!-- Top Right Badge: Piloto DESLIGADO -->
+    <g transform="translate(805, 12)">
+      <rect x="0" y="0" width="112" height="48" rx="4" fill="#18201a" stroke="#2c3b2f" stroke-width="1.5" />
+      <text x="100" y="16" text-anchor="end" fill="#9ca3af" font-size="10" font-weight="600">Piloto</text>
+      <text x="100" y="38" text-anchor="end" fill="#ffffff" font-size="15" font-weight="900" letter-spacing="0.5">DESLIGADO</text>
+    </g>
+
+    <!-- Bottom Left Badge: Rumo & Posição GPS -->
+    <g transform="translate(10, 480)">
+      <rect x="0" y="0" width="168" height="42" rx="4" fill="#0d1410" stroke="#1f2d24" stroke-width="1" />
+      <g transform="translate(10, 16)">
+        <text x="0" y="0" fill="#9ca3af" font-size="8.5" font-weight="600">Rumo</text>
+        <text x="0" y="18" fill="#ffffff" font-size="14" font-weight="800">360°</text>
+      </g>
+      <line x1="45" y1="8" x2="45" y2="34" stroke="#2d3b2f" stroke-width="1" />
+      <g transform="translate(54, 16)">
+        <text x="0" y="0" fill="#9ca3af" font-size="8.5" font-weight="600">Posição</text>
+        <text x="0" y="16" fill="#ffffff" font-size="10" font-mono font-weight="700">12°32'51.10" S 55°43'17.84" W</text>
+      </g>
+    </g>
+
+    <!-- Bottom Right Badge: Implemento ABAIXADO / Automático OFF -->
+    <g transform="translate(790, 484)">
+      <rect x="0" y="0" width="130" height="38" rx="4" fill="#0d1410" stroke="#1f2d24" stroke-width="1" />
+      <g transform="translate(10, 14)">
+        <text x="0" y="0" fill="#9ca3af" font-size="8">Implemento</text>
+        <text x="0" y="16" fill="#ffffff" font-size="10" font-weight="800">ABAIXADO</text>
+      </g>
+      <line x1="68" y1="6" x2="68" y2="32" stroke="#2d3b2f" stroke-width="1" />
+      <g transform="translate(76, 14)">
+        <text x="0" y="0" fill="#9ca3af" font-size="8">Automático</text>
+        <text x="0" y="16" fill="#ffffff" font-size="10" font-weight="800">OFF</text>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- ================= BOTTOM SECTION & METRICS BAR (Height 70px) ================= -->
+  <g id="bottom-bar" transform="translate(270, 578)">
+    <rect x="0" y="0" width="930" height="70" fill="#f1f5f3" stroke="#cbd5e1" stroke-width="1" />
+
+    <!-- Top Sub-Row: Seções 13/13 & 13 Green Segments -->
+    <g transform="translate(12, 12)">
+      <text x="0" y="10" fill="#1e293b" font-size="12" font-weight="700">Seções 13/13</text>
+      
+      <!-- 13 Green Bar Segments -->
+      <g transform="translate(90, 1)">
+        <rect x="0" y="0" width="40" height="12" rx="1.5" fill="#15803d" />
+        <rect x="44" y="0" width="40" height="12" rx="1.5" fill="#15803d" />
+        <rect x="88" y="0" width="40" height="12" rx="1.5" fill="#15803d" />
+        <rect x="132" y="0" width="40" height="12" rx="1.5" fill="#15803d" />
+        <rect x="176" y="0" width="40" height="12" rx="1.5" fill="#15803d" />
+        <rect x="220" y="0" width="40" height="12" rx="1.5" fill="#15803d" />
+        <rect x="264" y="0" width="40" height="12" rx="1.5" fill="#15803d" />
+        <rect x="308" y="0" width="40" height="12" rx="1.5" fill="#15803d" />
+        <rect x="352" y="0" width="40" height="12" rx="1.5" fill="#15803d" />
+        <rect x="396" y="0" width="40" height="12" rx="1.5" fill="#15803d" />
+        <rect x="440" y="0" width="40" height="12" rx="1.5" fill="#15803d" />
+        <rect x="484" y="0" width="40" height="12" rx="1.5" fill="#15803d" />
+        <rect x="528" y="0" width="40" height="12" rx="1.5" fill="#15803d" />
+      </g>
+
+      <text x="730" y="10" fill="#1e293b" font-size="12" font-weight="700">Corte 0.00 ha</text>
+    </g>
+
+    <!-- Bottom 4 Status Cards -->
+    <g transform="translate(0, 26)">
+      <!-- Divider line -->
+      <line x1="0" y1="0" x2="930" y2="0" stroke="#cbd5e1" stroke-width="1" />
+
+      <!-- Card 1: Área plantada -->
+      <rect x="0" y="0" width="220" height="44" fill="#f8faf9" />
+      <text x="110" y="17" text-anchor="middle" fill="#475569" font-size="11" font-weight="600">Área plantada</text>
+      <text x="110" y="34" text-anchor="middle" fill="#0f172a" font-size="14" font-weight="800">0.02 ha</text>
+      <line x1="220" y1="0" x2="220" y2="44" stroke="#cbd5e1" stroke-width="1" />
+
+      <!-- Card 2: Cobertura -->
+      <rect x="220" y="0" width="230" height="44" fill="#f8faf9" />
+      <text x="335" y="17" text-anchor="middle" fill="#475569" font-size="11" font-weight="600">Cobertura</text>
+      <text x="335" y="34" text-anchor="middle" fill="#16a34a" font-size="14" font-weight="800">0.1%</text>
+      <line x1="450" y1="0" x2="450" y2="44" stroke="#cbd5e1" stroke-width="1" />
+
+      <!-- Card 3: Corte de seções (ACTIVE GREEN BOX) -->
+      <rect x="450" y="0" width="240" height="44" fill="#0d6e27" />
+      <text x="570" y="17" text-anchor="middle" fill="#bbf7d0" font-size="11" font-weight="600">Corte de seções</text>
+      <text x="570" y="34" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="800">ATIVADO</text>
+      <line x1="690" y1="0" x2="690" y2="44" stroke="#cbd5e1" stroke-width="1" />
+
+      <!-- Card 4: Sobreposição -->
+      <rect x="690" y="0" width="240" height="44" fill="#f8faf9" />
+      <text x="810" y="17" text-anchor="middle" fill="#475569" font-size="11" font-weight="600">Sobreposição</text>
+      <text x="810" y="34" text-anchor="middle" fill="#0f172a" font-size="14" font-weight="800">0.00%</text>
+    </g>
+  </g>
+</svg>

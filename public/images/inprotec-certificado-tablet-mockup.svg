@@ -1,0 +1,297 @@
+<svg viewBox="0 0 1100 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Realistic drop shadows -->
+    <filter id="tabletShadow" x="-10%" y="-10%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="25" stdDeviation="22" flood-color="#000000" flood-opacity="0.35" />
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.2" />
+    </filter>
+    <filter id="cardShadow" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="-10" dy="28" stdDeviation="20" flood-color="#000000" flood-opacity="0.45" />
+      <feDropShadow dx="-2" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.25" />
+    </filter>
+
+    <!-- Tablet Metallic Edge Gradient -->
+    <linearGradient id="tabletBezel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d3748" />
+      <stop offset="50%" stop-color="#1a202c" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+
+    <!-- Certificate Green Gradient Accents -->
+    <linearGradient id="certGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#15803d" />
+      <stop offset="100%" stop-color="#166534" />
+    </linearGradient>
+
+    <linearGradient id="goldBadge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+
+  <!-- ================= TABLET IN THE BACKGROUND ================= -->
+  <g transform="translate(260, 60)" filter="url(#tabletShadow)">
+    <!-- Tablet Chassis (Matte Black Bezel with subtle roundness) -->
+    <rect x="0" y="0" width="760" height="520" rx="28" fill="url(#tabletBezel)" stroke="#374151" stroke-width="3" />
+    
+    <!-- Camera pinhole on top bezel -->
+    <circle cx="380" cy="14" r="4.5" fill="#111827" stroke="#4b5563" stroke-width="1.5" />
+    <circle cx="381" cy="13.5" r="1.5" fill="#38bdf8" opacity="0.6" />
+
+    <!-- Screen Display Frame -->
+    <rect x="24" y="28" width="712" height="464" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" />
+
+    <!-- CERTIFICATE CONTENT ON SCREEN -->
+    <g transform="translate(24, 28)">
+      <!-- Certificate Border / Corner Wave Accents -->
+      <path d="M 0 0 L 140 0 C 100 40 40 100 0 140 Z" fill="#22c55e" opacity="0.12" />
+      <path d="M 712 464 L 572 464 C 612 424 672 364 712 324 Z" fill="#22c55e" opacity="0.15" />
+      <path d="M 712 0 L 712 180 C 660 140 680 50 620 0 Z" fill="#16a34a" opacity="0.18" />
+
+      <!-- Top Inner Border Line -->
+      <rect x="24" y="24" width="664" height="416" rx="4" fill="none" stroke="#22c55e" stroke-width="1.8" stroke-dasharray="0" />
+
+      <!-- Top Left Logo: FACULDADE DO OPERADOR (FDO) -->
+      <g transform="translate(48, 44)">
+        <text x="0" y="32" font-family="'Space Grotesk', sans-serif" font-size="34" font-weight="900" fill="#15803d">FD</text>
+        <circle cx="68" cy="22" r="15" fill="#16a34a" />
+        <!-- Tractor silhouette inside circle -->
+        <path d="M 60 26 L 64 20 L 73 20 L 75 26 Z M 62 26 A 4 4 0 1 0 70 26 Z" fill="#ffffff" />
+        <text x="0" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="800" fill="#166534" letter-spacing="1">FACULDADE DO OPERADOR</text>
+      </g>
+
+      <!-- Center Title: CERTIFICADO -->
+      <g transform="translate(200, 48)">
+        <text x="156" y="46" text-anchor="middle" font-family="'Chakra Petch', 'Impact', sans-serif" font-size="44" font-weight="900" fill="#15803d" letter-spacing="3">
+          CERTIFICADO
+        </text>
+      </g>
+
+      <!-- Top Right Seal: Gear & Leaf Badge -->
+      <g transform="translate(600, 42)">
+        <circle cx="36" cy="36" r="34" fill="url(#goldBadge)" />
+        <circle cx="36" cy="36" r="26" fill="#15803d" stroke="#ffffff" stroke-width="2.5" />
+        <!-- Leaf symbol inside badge -->
+        <path d="M 36 20 C 44 26 46 36 36 48 C 26 36 28 26 36 20 Z" fill="#ffffff" />
+        <path d="M 36 23 L 36 46" stroke="#15803d" stroke-width="1.8" />
+      </g>
+
+      <!-- Certificate Body Text -->
+      <g transform="translate(356, 150)" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif">
+        <text y="0" font-size="16" font-weight="700" fill="#0f172a">
+          O instituto Inprotec certifica que o senhor(a):
+        </text>
+
+        {/* Student Name */}
+        <text y="36" font-family="'Chakra Petch', monospace" font-size="22" font-weight="800" fill="#15803d" letter-spacing="1">
+          OPERADOR QUALIFICADO
+        </text>
+        <line x1="-180" y1="44" x2="180" y2="44" stroke="#d1d5db" stroke-width="1" />
+
+        <text y="66" font-size="11.5" font-weight="600" fill="#4b5563">
+          Portador do CPF: ***.***.***-**
+        </text>
+        <text y="86" font-size="11.5" font-weight="500" fill="#4b5563">
+          Por ter participado das atividades teóricas e práticas,
+        </text>
+        <text y="104" font-size="11.5" font-weight="500" fill="#4b5563">
+          concluindo de forma satisfatória o curso de:
+        </text>
+
+        {/* Course Title Highlight */}
+        <rect x="-240" y="120" width="480" height="34" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1.2" />
+        <text y="142" font-family="'Chakra Petch', sans-serif" font-size="14.5" font-weight="800" fill="#166534" letter-spacing="0.5">
+          GPS E PILOTO AUTOMÁTICO NA PRÁTICA (MÁQUINAS AGRÍCOLAS)
+        </text>
+
+        <text y="174" font-size="10.5" font-weight="600" fill="#64748b">
+          Carga Horária: 20 Horas • Conforme Normas Regulamentadoras NR-12 e NR-31
+        </text>
+      </g>
+
+      <!-- Bottom Signatures -->
+      <g transform="translate(60, 360)">
+        <!-- Signature 1: Alyson Viana -->
+        <g transform="translate(80, 0)">
+          <path d="M 10 20 Q 30 -5 50 18 Q 70 10 90 22 Q 110 -2 130 18" stroke="#0f172a" stroke-width="1.8" fill="none" stroke-linecap="round" />
+          <line x1="0" y1="28" x2="150" y2="28" stroke="#9ca3af" stroke-width="1" />
+          <text x="75" y="42" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#1e293b">Alyson Nogueira Viana</text>
+          <text x="75" y="54" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="600" fill="#64748b">Diretor Geral</text>
+        </g>
+
+        <!-- Signature 2: Thiago Pereira Soares -->
+        <g transform="translate(320, 0)">
+          <path d="M 10 15 Q 25 30 45 5 Q 65 25 85 8 Q 115 28 135 12" stroke="#0f172a" stroke-width="1.8" fill="none" stroke-linecap="round" />
+          <line x1="0" y1="28" x2="160" y2="28" stroke="#9ca3af" stroke-width="1" />
+          <text x="80" y="42" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#1e293b">Thiago Pereira Soares</text>
+          <text x="80" y="54" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="600" fill="#64748b">Eng. de Seg. do Trabalho / CREA 185889D</text>
+        </g>
+
+        <!-- Inprotec Bottom Logo Seal -->
+        <g transform="translate(520, -5)">
+          <circle cx="28" cy="28" r="24" fill="#f0fdf4" stroke="#16a34a" stroke-width="2" stroke-dasharray="3,2" />
+          <path d="M 28 16 L 31 24 L 39 25 L 33 30 L 35 38 L 28 33 L 21 38 L 23 30 L 17 25 L 25 24 Z" fill="#16a34a" />
+          <text x="28" y="62" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="900" fill="#15803d" letter-spacing="1">INPROTEC</text>
+        </g>
+      </g>
+
+    </g>
+  </g>
+
+  <!-- ================= CARTEIRINHA DO OPERADOR IN FOREGROUND ================= -->
+  <!-- Tilted at dynamic 3D angle overlapping bottom-left of tablet -->
+  <g transform="translate(60, 320) rotate(-14)" filter="url(#cardShadow)">
+    
+    <!-- Carteirinha Outer Container (Folded Spread Card) -->
+    <rect x="0" y="0" width="580" height="310" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" />
+
+    <!-- Card Subtle Inner Center Fold Line -->
+    <line x1="280" y1="0" x2="280" y2="310" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4,4" />
+
+    {/* ================= LEFT FLAP: OPERATOR CREDENTIAL ================= */}
+    <g transform="translate(0, 0)">
+      <!-- Left Green Spine with Year -->
+      <rect x="0" y="0" width="46" height="310" rx="14" fill="#15803d" />
+      <rect x="30" y="0" width="16" height="310" fill="#15803d" />
+      <text x="23" y="190" text-anchor="middle" font-family="'Chakra Petch', sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="6" transform="rotate(-90 23 190)">
+        2026
+      </text>
+
+      <!-- Left Flap Content Area -->
+      <g transform="translate(56, 14)">
+        <!-- Header -->
+        <g>
+          <text x="0" y="16" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="900" fill="#166534" letter-spacing="0.5">
+            INPROTEC Instituto de
+          </text>
+          <text x="0" y="28" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="700" fill="#15803d">
+            Profissões e Treinamentos
+          </text>
+        </g>
+
+        <!-- Machine Qualification Checklist -->
+        <g transform="translate(0, 48)" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="700" fill="#1e293b">
+          <text y="0">✓ Colheitadeira de Grãos</text>
+          <text y="14" fill="#15803d">✓ GPS e Piloto Automático</text>
+          <text y="28">✓ Trator Agrícola de Roda</text>
+          <text y="42">✓ Pulverizador Autopropelido</text>
+        </g>
+
+        <!-- 3X4 Photo Box Placeholder -->
+        <g transform="translate(142, 42)">
+          <rect x="0" y="0" width="68" height="86" rx="4" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="2,2" />
+          <circle cx="34" cy="36" r="14" fill="#cbd5e1" />
+          <path d="M 20 68 C 20 54 48 54 48 68 Z" fill="#cbd5e1" />
+          <text x="34" y="80" text-anchor="middle" font-family="'Chakra Petch', sans-serif" font-size="11" font-weight="700" fill="#64748b">3X4</text>
+        </g>
+
+        <!-- Operator Name Line -->
+        <g transform="translate(0, 150)">
+          <rect x="0" y="0" width="210" height="32" rx="4" fill="#f8fafc" stroke="#86efac" stroke-width="1" />
+          <text x="8" y="12" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="700" fill="#166534">NOME DO OPERADOR:</text>
+          <text x="8" y="26" font-family="'Chakra Petch', monospace" font-size="11.5" font-weight="800" fill="#0f172a">
+            SEU NOME COMPLETO
+          </text>
+        </g>
+
+        <!-- Date & CPF -->
+        <g transform="translate(0, 192)" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="600" fill="#475569">
+          <text y="10">Data de Realização: 2026</text>
+          <text y="24">CPF: XXX.XXX.XXX-XX</text>
+        </g>
+
+        <!-- URL Footer -->
+        <text x="0" y="278" font-family="'Chakra Petch', monospace" font-size="8" font-weight="700" fill="#16a34a">
+          www.inprotectreinamentos.com.br
+        </text>
+      </g>
+    </g>
+
+    {/* ================= RIGHT FLAP: NR STANDARDS & SYLLABUS ================= */}
+    <g transform="translate(290, 14)">
+      <!-- Right Flap Header -->
+      <g>
+        <text x="0" y="16" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="900" fill="#166534">
+          INPROTEC Instituto de
+        </text>
+        <text x="0" y="27" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#15803d">
+          Profissões e Treinamentos
+        </text>
+      </g>
+
+      <!-- Legal NR Regulations Box -->
+      <g transform="translate(0, 36)">
+        <rect x="0" y="0" width="276" height="52" rx="5" fill="#fef2f2" stroke="#f87171" stroke-width="1" />
+        <text x="8" y="14" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="800" fill="#991b1b">
+          Portaria 3.214/78 (NR's) — MTE
+        </text>
+        <text x="8" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.8" font-weight="500" fill="#7f1d1d">
+          Documento válido por 12 meses. A reciclagem deve ser feita anualmente
+        </text>
+        <text x="8" y="36" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.8" font-weight="500" fill="#7f1d1d">
+          para fins de atualização das NR's (NR-12 e NR-31).
+        </text>
+        <text x="8" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.8" font-weight="700" fill="#991b1b">
+          Registro Nacional de Treinamentos Agrícolas
+        </text>
+      </g>
+
+      <!-- Course Content Checklist (Columns) -->
+      <g transform="translate(0, 98)" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5" font-weight="600" fill="#334155">
+        <text y="0" font-weight="800" fill="#166534">CONTEÚDO APLICADO:</text>
+        <text y="11">01- Segurança do Trabalho na Operação</text>
+        <text y="21">02- Legislação aplicada ao operador</text>
+        <text y="31">03- Prevenção e riscos de acidentes</text>
+        <text y="41">04- Sinalização e luzes de advertência</text>
+        <text y="51">05- Inspeção e calibração de sensores</text>
+        <text y="61">06- Configuração de Piloto Automático</text>
+        <text y="71">07- Pistas A/B e linhas de orientação</text>
+        <text y="81">08- Antenas GNSS, RTK e compensação TCM</text>
+      </g>
+
+      <!-- QR Code and Seal on Right -->
+      <g transform="translate(170, 185)">
+        <rect x="0" y="0" width="96" height="92" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1" />
+        <!-- QR Code Matrix Mockup -->
+        <g transform="translate(10, 8)">
+          <rect x="0" y="0" width="18" height="18" fill="#15803d" />
+          <rect x="4" y="4" width="10" height="10" fill="#ffffff" />
+          <rect x="6" y="6" width="6" height="6" fill="#15803d" />
+
+          <rect x="36" y="0" width="18" height="18" fill="#15803d" />
+          <rect x="40" y="4" width="10" height="10" fill="#ffffff" />
+          <rect x="42" y="6" width="6" height="6" fill="#15803d" />
+
+          <rect x="0" y="36" width="18" height="18" fill="#15803d" />
+          <rect x="4" y="40" width="10" height="10" fill="#ffffff" />
+          <rect x="6" y="42" width="6" height="6" fill="#15803d" />
+
+          <!-- Random QR blips -->
+          <rect x="22" y="4" width="6" height="6" fill="#15803d" />
+          <rect x="22" y="14" width="6" height="8" fill="#15803d" />
+          <rect x="22" y="26" width="8" height="8" fill="#15803d" />
+          <rect x="34" y="24" width="8" height="6" fill="#15803d" />
+          <rect x="14" y="44" width="8" height="6" fill="#15803d" />
+          <rect x="28" y="38" width="6" height="12" fill="#15803d" />
+          <rect x="40" y="36" width="8" height="10" fill="#15803d" />
+        </g>
+        <text x="48" y="78" text-anchor="middle" font-family="'Chakra Petch', sans-serif" font-size="6.5" font-weight="800" fill="#166534">
+          LEIA COM A CÂMERA AQUI
+        </text>
+      </g>
+
+      <!-- Signature & Stamp on Right Flap -->
+      <g transform="translate(0, 205)">
+        <path d="M 10 18 Q 30 0 50 16 Q 75 4 100 16" stroke="#0f172a" stroke-width="1.4" fill="none" />
+        <line x1="0" y1="24" x2="130" y2="24" stroke="#94a3b8" stroke-width="0.8" />
+        <text x="65" y="34" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="700" fill="#1e293b">
+          Diretor Geral / Inprotec
+        </text>
+        <text x="65" y="44" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5" font-weight="500" fill="#64748b">
+          Uberlândia / MG
+        </text>
+      </g>
+
+    </g>
+  </g>
+</svg>

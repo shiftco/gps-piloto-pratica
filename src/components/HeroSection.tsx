@@ -1,6 +1,7 @@
 import React from 'react';
 import { HERO_DATA } from '../data/courseData';
 import { ShieldCheck, CheckCircle2, ArrowRight } from 'lucide-react';
+import { GpsTerminalScreen } from './GpsTerminalScreen';
 
 interface HeroSectionProps {
   onOpenCheckout: () => void;
@@ -19,7 +20,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenCheckout }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Header & Copy */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-8">
+        <div className="text-center max-w-4xl mx-auto space-y-4 mb-8">
           {/* Top Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/40 text-emerald-400 text-xs sm:text-sm font-semibold shadow-xs">
             <span className="flex h-2 w-2 relative">
@@ -34,53 +35,50 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenCheckout }) => {
             {HERO_DATA.headline}
           </h1>
 
-          {/* Subheadline com a promessa principal mais destacada */}
-          <div className="space-y-3 pt-1">
-            <div>
-              <span className="inline-block font-tech text-lg sm:text-2xl lg:text-3xl font-extrabold text-emerald-300 bg-emerald-950/70 border border-emerald-500/50 px-4 py-1.5 rounded-2xl shadow-[0_0_20px_rgba(16,185,129,0.2)]">
-                Aprenda mais de 50 configurações de GPS e piloto automático
-              </span>
-            </div>
-            <p className="text-base sm:text-lg lg:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto">
-              que todo operador precisa dominar para configurar, calibrar e operar máquinas agrícolas com precisão.
+          {/* Subheadline com o texto solicitado pelo usuário (cor cinza) */}
+          <div className="pt-2 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-2xl lg:text-2xl text-slate-300 font-normal leading-relaxed">
+              Aprenda todas as configurações de GPS e piloto automático que todo operador precisa dominar para configurar, calibrar e operar máquinas agrícolas com precisão
             </p>
           </div>
         </div>
 
-        {/* HERO MOCKUP (POSICIONADO ENTRE A SUBHEADLINE E O BOTÃO) */}
+        {/* HERO MOCKUP SUBSTITUÍDO PELA NOVA TELA DO TERMINAL DE GPS E GUIAMENTO */}
         <div className="my-6 lg:my-8 max-w-5xl mx-auto">
-          <div className="relative rounded-3xl overflow-hidden border-2 border-emerald-500/50 shadow-[0_20px_60px_rgba(0,0,0,0.95),0_0_45px_rgba(16,185,129,0.2)] bg-black group">
+          <div className="relative rounded-3xl p-2.5 sm:p-4 bg-[#141c16] border-2 border-emerald-500/40 shadow-[0_25px_70px_rgba(0,0,0,0.95),0_0_40px_rgba(16,185,129,0.18)] group">
             
-            {/* Top Bar on Image */}
-            <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none">
-              <span className="px-3.5 py-1.5 rounded-full bg-black/90 backdrop-blur-md border border-emerald-500/50 text-emerald-400 font-mono text-xs font-bold shadow-lg flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                TAXA VARIÁVEL • IMPLEMENTO • PILOTO RTK
-              </span>
-              <span className="hidden sm:inline-block px-3 py-1 rounded-lg bg-black/85 backdrop-blur-md text-cyan-300 font-mono text-[11px] border border-cyan-500/30">
-                PRECISÃO RTK 1.8CM
-              </span>
+            {/* Top Monitor Bezel Info Bar */}
+            <div className="flex items-center justify-between px-3.5 py-2 mb-2.5 bg-[#0b120d] rounded-xl border border-zinc-800 text-[11px] font-mono text-zinc-400">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span className="text-slate-200 font-bold">TERMINAL DE OPERAÇÃO • GUIAMENTO & PILOTO</span>
+              </div>
+              <div className="hidden sm:flex items-center gap-3 text-xs text-zinc-400">
+                <span className="text-emerald-400 font-bold">RTK FIXO (±2.5cm)</span>
+                <span>•</span>
+                <span>PISTA AB RETA</span>
+                <span>•</span>
+                <span className="text-slate-300">13 SEÇÕES ATIVAS</span>
+              </div>
             </div>
 
-            {/* Main Hero Image */}
-            <img
-              src="/images/hero-gps-monitor.jpg"
-              alt="Operador configurando monitor de GPS e Piloto Automático na prática com telemetria holográfica"
-              className="w-full h-auto object-cover max-h-[580px] group-hover:scale-[1.01] transition-transform duration-500"
-            />
+            {/* Main Terminal Screen Display (Rendered directly, ensuring 100% visibility & interactivity) */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <GpsTerminalScreen />
+            </div>
 
             {/* Bottom Caption Overlay */}
-            <div className="p-4 sm:p-5 bg-gradient-to-t from-black via-black/95 to-black/80 border-t border-zinc-900 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <div className="mt-3 p-3.5 sm:p-4 bg-[#0b120d] rounded-2xl border border-zinc-800/80 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
               <div className="space-y-0.5">
                 <div className="font-tech text-base sm:text-lg font-bold text-white flex items-center gap-2">
                   <span className="text-emerald-400">●</span> Configuração Prática na Cabine
                 </div>
-                <p className="text-xs sm:text-sm text-slate-300 font-normal">
-                  Domine taxa variável, mapa de prescrição, geometria do implemento, corte de seções e sensibilidade do piloto.
+                <p className="text-xs sm:text-sm text-slate-400 font-normal">
+                  Monitores agrícolas reais: calibração de piloto automático, geometria de implementos, linhas A/B retas e curvas, e controle de corte de seções.
                 </p>
               </div>
 
-              <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 font-bold bg-emerald-950/90 border border-emerald-500/40 px-3 py-1.5 rounded-lg">
+              <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 font-bold bg-emerald-950/90 border border-emerald-500/40 px-3 py-1.5 rounded-lg shrink-0">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                 <span>+50 TELAS E PARÂMETROS</span>
               </div>
